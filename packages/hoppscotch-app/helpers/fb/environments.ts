@@ -43,13 +43,15 @@ async function writeEnvironments(environment: Environment[]) {
     environment,
   }
 
+  console.log(ev)
+
   try {
     await setDoc(
       doc(
         getFirestore(),
         "users",
         currentUser$.value.uid,
-        "envrionments",
+        "environments",
         "sync"
       ),
       ev
@@ -85,6 +87,8 @@ async function writeGlobalEnvironment(variables: Environment["variables"]) {
 
 export function initEnvironments() {
   environments$.subscribe((envs) => {
+    console.log("env update")
+    debugger
     if (
       currentUser$.value &&
       settingsStore.value.syncEnvironments &&
