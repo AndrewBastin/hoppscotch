@@ -2,8 +2,7 @@ console.log("3.ts req")
 
 import { defineVersion } from "verzod"
 import { z } from "zod"
-import { HoppRESTReqBody } from "../../../rest/v/10"
-import { HoppRESTAuth } from "../../../rest/v/11"
+import { HoppRESTReqBody, HoppRESTAuth } from "../../../shared-types"
 import { V2_SCHEMA } from "./2"
 
 export const V3_SCHEMA = V2_SCHEMA.extend({

@@ -1,7 +1,8 @@
 console.log("10.ts rest")
 
 import { z } from "zod"
-import { FormDataKeyValue, V9_SCHEMA } from "./9"
+import { V9_SCHEMA } from "./9"
+import { FormDataKeyValue } from "./9/body"
 import { defineVersion } from "verzod"
 
 export const HoppRESTReqBody = z.union([

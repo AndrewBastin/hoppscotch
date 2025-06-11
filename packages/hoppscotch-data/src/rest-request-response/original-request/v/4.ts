@@ -1,6 +1,6 @@
 import { defineVersion } from "verzod"
 import { z } from "zod"
-import { HoppRESTAuth } from "../../../rest/v/12"
+import { HoppRESTAuth } from "../../../shared-types"
 import { V3_SCHEMA } from "./3"
 
 export const V4_SCHEMA = V3_SCHEMA.extend({
