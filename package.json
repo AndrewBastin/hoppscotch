@@ -17,7 +17,10 @@
     "lintfix": "pnpm -r do-lintfix",
     "pre-commit": "pnpm -r do-lint && pnpm -r do-typecheck",
     "test": "pnpm -r do-test",
-    "generate-ui": "pnpm -r do-build-ui"
+    "generate-ui": "pnpm -r do-build-ui",
+    "c:configure": "pnpm --filter @hoppscotch/c-core configure",
+    "c:build": "pnpm --filter @hoppscotch/c-core build",
+    "c:test": "pnpm --filter @hoppscotch/c-core test"
   },
   "workspaces": [
     "./packages/*"

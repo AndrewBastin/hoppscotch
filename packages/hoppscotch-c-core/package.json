@@ -1,0 +1,33 @@
+{
+  "name": "@hoppscotch/c-core",
+  "version": "0.1.0",
+  "description": "High-performance C core for Hoppscotch API testing",
+  "homepage": "https://hoppscotch.io",
+  "author": "Hoppscotch (support@hoppscotch.io)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hoppscotch/hoppscotch.git"
+  },
+  "bugs": {
+    "url": "https://github.com/hoppscotch/hoppscotch/issues",
+    "email": "support@hoppscotch.io"
+  },
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "configure": "cmake -B build -S . -DCMAKE_BUILD_TYPE=Release",
+    "configure:debug": "cmake -B build -S . -DCMAKE_BUILD_TYPE=Debug",
+    "build": "pnpm run configure && cmake --build build --config Release",
+    "build:debug": "pnpm run configure:debug && cmake --build build --config Debug",
+    "test": "cd build && ctest --output-on-failure",
+    "clean": "rm -rf build",
+    "format": "find src include tests -name '*.c' -o -name '*.h' | xargs clang-format -i",
+    "format:check": "find src include tests -name '*.c' -o -name '*.h' | xargs clang-format --dry-run --Werror"
+  },
+  "keywords": [
+    "hoppscotch",
+    "c",
+    "native",
+    "performance"
+  ]
+}
